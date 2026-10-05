@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cayañga Zuñiga Camacho and Boncodin Law Offices</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0b132b',
+                            900: '#050a18',
+                            950: '#02050e',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #fef3c7 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-navy-900 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-navy-950 text-slate-300 py-2 text-xs border-b border-slate-800 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center"><i data-lucide="phone" class="w-3.5 h-3.5 text-amber-500 mr-2"></i> +639561528051</span>
+                <span class="flex items-center"><i data-lucide="mail" class="w-3.5 h-3.5 text-amber-500 mr-2"></i> contact@czcb.com</span>
+                <span class="flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-500 mr-2"></i> Ayala Ave. Makati City</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                <span class="text-amber-500 font-semibold">24/7 Emergency Line</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-navy-900/90 text-white glass-nav border-b border-amber-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center shadow-md transform group-hover:rotate-6 transition-transform">
+                        <i data-lucide="scale" class="w-6 h-6 text-navy-950"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-amber-400 block leading-none"> Cayañga Zuñiga Camacho and Boncodin Law Offices</span>
+                        <span class="text-[10px] tracking-[0.2em] text-slate-400 uppercase font-medium">Attorneys at Law</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+                    <a href="#practice-areas" class="hover:text-amber-400 transition-colors">Practice Areas</a>
+                    <a href="#attorneys" class="hover:text-amber-400 transition-colors">Attorneys</a>
+                    <a href="#results" class="hover:text-amber-400 transition-colors">Case Results</a>
+                    <a href="#testimonials" class="hover:text-amber-400 transition-colors">Testimonials</a>
+                    <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <!-- Dark/Light Mode Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-navy-800 text-amber-400 hover:bg-navy-800/80 transition-colors" aria-label="Toggle Theme">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="#booking" class="gold-gradient text-navy-950 hover:bg-amber-400 font-semibold px-5 py-2.5 rounded shadow-lg hover:shadow-amber-500/20 transition-all flex items-center text-sm">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                        Free Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center space-x-2 sm:hidden">
+                    <button id="themeToggleMobile" class="p-2 rounded-lg bg-navy-800 text-amber-400" aria-label="Toggle Theme">
+                        <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-md text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden sm:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">About Us</a>
+            <a href="#practice-areas" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">Practice Areas</a>
+            <a href="#attorneys" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">Attorneys</a>
+            <a href="#results" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">Case Results</a>
+            <a href="#testimonials" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">Testimonials</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-amber-400 font-medium">Contact</a>
+            <a href="#booking" class="block w-full text-center gold-gradient text-navy-950 font-bold py-3 rounded mt-4">
+                Schedule Free Consultation
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-navy-950 text-white min-h-[85vh] flex items-center justify-center overflow-hidden py-16 lg:py-0">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-transparent z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wider uppercase">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        <span>Relentless Advocacy • Unrivaled Results</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        Protecting Your Future With <span class="text-gold-gradient">Uncompromising Excellence</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                        For over three decades,  Cayañga Zuñiga Camacho and Boncodin Law Offices has stood at the forefront of legal innovation, corporate law, high-stakes litigation, and personal defense.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#booking" class="gold-gradient text-navy-950 hover:opacity-95 font-bold px-8 py-4 rounded text-center shadow-lg hover:shadow-amber-500/20 transition-all flex items-center justify-center">
+                            <span>Request Case Review</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="#practice-areas" class="bg-navy-800/80 hover:bg-navy-800 text-slate-200 border border-slate-700 font-medium px-8 py-4 rounded text-center transition-colors flex items-center justify-center">
+                            Explore Services
+                        </a>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4">
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider">Top Rated</div>
+                            <div class="text-amber-400 font-serif font-bold text-lg mt-0.5">Tier 1 Firm</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider">Availability</div>
+                            <div class="text-amber-400 font-serif font-bold text-lg mt-0.5">24/7 Counsel</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider">Success Rate</div>
+                            <div class="text-amber-400 font-serif font-bold text-lg mt-0.5">99.2% Won</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: Quick Case Evaluation Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-900/90 border border-amber-500/30 rounded-xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-white">Quick Case Evaluation</h3>
+                                <p class="text-xs text-slate-400 mt-1">Free & Confidential Initial Assessment</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-400">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+
+                        <form id="quickForm" onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-navy-950 border border-slate-700 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Phone Number</label>
+                                <input type="tel" required placeholder="(555) 000-0000" class="w-full bg-navy-950 border border-slate-700 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Practice Area Needed</label>
+                                <select required class="w-full bg-navy-950 border border-slate-700 rounded px-3 py-2.5 text-sm text-slate-300 focus:outline-none focus:border-amber-500">
+                                    <option value="">Select Category...</option>
+                                    <option value="corporate">Corporate & Commercial Law</option>
+                                    <option value="family">Family & Matrimonial</option>
+                                    <option value="defense">Criminal Defense</option>
+                                    <option value="ip">Intellectual Property</option>
+                                    <option value="injury">Personal Injury</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Brief Description</label>
+                                <textarea rows="2" placeholder="Tell us about your case..." class="w-full bg-navy-950 border border-slate-700 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full gold-gradient text-navy-950 font-bold py-3 rounded text-sm hover:opacity-95 transition-opacity flex justify-center items-center">
+                                <span>Submit Request</span>
+                                <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Counter Bar -->
+    <section class="bg-navy-800 border-y border-amber-500/20 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-serif font-bold text-amber-400 mb-1" id="stat-years">35+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider">Years Experience</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-serif font-bold text-amber-400 mb-1" id="stat-cases">12,500+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider">Cases Won</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-serif font-bold text-amber-400 mb-1" id="stat-recovered">$850M+</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider">Recovered For Clients</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-serif font-bold text-amber-400 mb-1" id="stat-satisfaction">99.8%</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium uppercase tracking-wider">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 dark:bg-navy-900 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Grid -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80" alt="Law Firm Office" class="rounded-lg shadow-xl w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80" alt="Legal Consultation" class="rounded-lg shadow-xl w-full h-64 object-cover mt-8">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-navy-950 border border-amber-500/30 p-6 rounded-lg shadow-2xl hidden sm:block max-w-xs">
+                        <p class="font-serif text-amber-400 font-bold text-lg mb-1">"Integrity is the bedrock of our practice."</p>
+                        <p class="text-xs text-slate-400">— Arthur Vance, Managing Partner</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <span class="text-amber-500 font-semibold text-sm tracking-widest uppercase">About  Cayañga Zuñiga Camacho and Boncodin Law Offices</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold dark:text-white text-navy-950">
+                        A Legacy of Steadfast Advocacy & Strategic Victory
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Founded in 1989,  Cayañga Zuñiga Camacho and Boncodin Law Offices Partners has grown into a premier multi-disciplinary law firm known for handling complex legal challenges with precision, discretion, and strategic legal vigor.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 bg-amber-500/10 rounded text-amber-500 shrink-0 mt-1">
+                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-white text-navy-950">Client-Centric Approach</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Tailored strategies focused on your specific legal and financial objectives.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 bg-amber-500/10 rounded text-amber-500 shrink-0 mt-1">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-white text-navy-950">Recognized Trial Practice</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Battle-tested litigators with track records in state and federal courts.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 bg-amber-500/10 rounded text-amber-500 shrink-0 mt-1">
+                                <i data-lucide="lock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-white text-navy-950">Absolute Confidentiality</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Strict adherence to client discretion and high-security protocols.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Section -->
+    <section id="practice-areas" class="py-20 dark:bg-navy-950 bg-slate-100 border-t dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-semibold text-sm tracking-widest uppercase">Legal Expertise</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold dark:text-white text-navy-950 mt-2">Practice Areas</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-4">We offer robust, comprehensive legal representation across key sectors to defend your rights and business interests.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="practiceFilterBtns">
+                <button onclick="filterPractice('all')" class="px-4 py-2 rounded-full text-sm font-medium transition-colors bg-amber-500 text-navy-950 font-semibold" data-filter="all">All Specialties</button>
+                <button onclick="filterPractice('corporate')" class="px-4 py-2 rounded-full text-sm font-medium transition-colors dark:bg-navy-800 bg-white text-slate-700 dark:text-slate-300 hover:text-amber-500" data-filter="corporate">Corporate & Business</button>
+                <button onclick="filterPractice('family')" class="px-4 py-2 rounded-full text-sm font-medium transition-colors dark:bg-navy-800 bg-white text-slate-700 dark:text-slate-300 hover:text-amber-500" data-filter="family">Family & Matrimonial</button>
+                <button onclick="filterPractice('criminal')" class="px-4 py-2 rounded-full text-sm font-medium transition-colors dark:bg-navy-800 bg-white text-slate-700 dark:text-slate-300 hover:text-amber-500" data-filter="criminal">Criminal Defense</button>
+                <button onclick="filterPractice('ip')" class="px-4 py-2 rounded-full text-sm font-medium transition-colors dark:bg-navy-800 bg-white text-slate-700 dark:text-slate-300 hover:text-amber-500" data-filter="ip">Intellectual Property</button>
+            </div>
+
+            <!-- Practice Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="practiceGrid">
+                <!-- Practice Cards generated dynamically / enhanced via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Attorneys Section -->
+    <section id="attorneys" class="py-20 dark:bg-navy-900 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-semibold text-sm tracking-widest uppercase">Legal Leadership</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold dark:text-white text-navy-950 mt-2">Our Senior Partners & Associates</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-4">Committed advocates with decades of combined legal mastery.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="attorneysGrid">
+                <!-- Dynamic Attorney Cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 dark:bg-navy-950 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-900 border border-amber-500/30 rounded-2xl p-8 sm:p-12 shadow-2xl">
+                <div class="text-center mb-10">
+                    <span class="text-amber-400 font-semibold text-xs tracking-widest uppercase">Direct Consultation</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Schedule Your Private Case Assessment</h2>
+                    <p class="text-slate-400 text-sm mt-2">Select your preferred date and time for a confidential meeting with an attorney.</p>
+                </div>
+
+                <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">First Name *</label>
+                            <input type="text" required placeholder="Jane" class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Last Name *</label>
+                            <input type="text" required placeholder="Smith" class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
+                            <input type="email" required placeholder="jane.smith@example.com" class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number *</label>
+                            <input type="tel" required placeholder="+1 (555) 123-4567" class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Legal Area *</label>
+                            <select required class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-slate-300 focus:outline-none focus:border-amber-500">
+                                <option value="">Select Category</option>
+                                <option value="Corporate Law">Corporate Law</option>
+                                <option value="Family Law">Family & Matrimonial</option>
+                                <option value="Criminal Defense">Criminal Defense</option>
+                                <option value="Intellectual Property">Intellectual Property</option>
+                                <option value="Real Estate">Real Estate Law</option>
+                                <option value="Personal Injury">Personal Injury</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Preferred Date *</label>
+                            <input type="date" required class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-slate-300 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Time Slot *</label>
+                            <select required class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-slate-300 focus:outline-none focus:border-amber-500">
+                                <option value="">Select Time Slot</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="04:30 PM">04:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Case Overview</label>
+                        <textarea rows="4" placeholder="Provide a brief summary of your legal inquiry..." class="w-full bg-navy-950 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gold-gradient text-navy-950 font-bold py-4 rounded-lg hover:opacity-95 transition-opacity text-base flex items-center justify-center">
+                        <i data-lucide="calendar-check" class="w-5 h-5 mr-2"></i>
+                        Confirm Consultation Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Results Section -->
+    <section id="results" class="py-20 dark:bg-navy-900 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-semibold text-sm tracking-widest uppercase">Proven Success</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold dark:text-white text-navy-950 mt-2">Landmark Case Verdicts & Settlements</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-slate-700 p-8 rounded-xl relative overflow-hidden">
+                    <div class="text-3xl font-serif font-bold text-amber-500 mb-2">$42.5 Million</div>
+                    <div class="font-bold text-lg dark:text-white text-navy-950 mb-2">Commercial Securities Class Action</div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Successfully recovered damages for shareholders against a multinational financial institution following securities fraud.</p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs text-amber-500 font-medium">Corporate Practice Group</div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-slate-700 p-8 rounded-xl relative overflow-hidden">
+                    <div class="text-3xl font-serif font-bold text-amber-500 mb-2">$18.2 Million</div>
+                    <div class="font-bold text-lg dark:text-white text-navy-950 mb-2">Intellectual Property Infringement</div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Secured major settlement and permanent injunction for a tech startup against patent infringement by an industry titan.</p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs text-amber-500 font-medium">IP & Tech Group</div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-slate-700 p-8 rounded-xl relative overflow-hidden">
+                    <div class="text-3xl font-serif font-bold text-amber-500 mb-2">Full Acquittal</div>
+                    <div class="font-bold text-lg dark:text-white text-navy-950 mb-2">Federal White-Collar Defense</div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Complete dismissal of all federal wire fraud charges for a corporate executive following an intensive 3-week jury trial.</p>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs text-amber-500 font-medium">Litigation & Defense Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section id="testimonials" class="py-20 dark:bg-navy-950 bg-slate-100 border-t dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-semibold text-sm tracking-widest uppercase">Client Endorsements</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold dark:text-white text-navy-950 mt-2">What Our Clients Say</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-navy-900 p-8 rounded-xl shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic mb-6">" Cayañga Zuñiga Camacho and Boncodin Law Offices handled our cross-border merger seamlessly. Their strategic foresight saved us months of regulatory delays. Truly world-class legal counsel."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80" class="w-10 h-10 rounded-full object-cover" alt="Client">
+                        <div>
+                            <div class="font-bold text-sm dark:text-white text-navy-950">Evelyn Ross</div>
+                            <div class="text-xs text-slate-500">CEO, Vantage Tech Holdings</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-navy-900 p-8 rounded-xl shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic mb-6">"In my most challenging legal trial, Arthur Vance provided unwavering calm and brilliant trial tactics. I owe my business reputation to this firm."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" class="w-10 h-10 rounded-full object-cover" alt="Client">
+                        <div>
+                            <div class="font-bold text-sm dark:text-white text-navy-950">Marcus Thorne</div>
+                            <div class="text-xs text-slate-500">Managing Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-navy-900 p-8 rounded-xl shadow-md border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed italic mb-6">"Compassionate, extremely knowledgeable, and relentless in court. Sarah Lex secured our family's future with utmost professionalism."</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="w-10 h-10 rounded-full object-cover" alt="Client">
+                        <div>
+                            <div class="font-bold text-sm dark:text-white text-navy-950">Elena Sterling</div>
+                            <div class="text-xs text-slate-500">Private Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-navy-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                
+                <!-- Firm Overview -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center">
+                            <i data-lucide="scale" class="w-5 h-5 text-navy-950"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wider text-amber-400"> Cayañga Zuñiga Camacho and Boncodin Law Offices</span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                         Cayañga Zuñiga Camacho and Boncodin Law Offices is a premier global law firm dedicated to offering distinguished, outcome-oriented legal representation for corporations and individuals.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded bg-navy-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-navy-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-navy-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 tracking-wider uppercase">Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About Firm</a></li>
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Practice Areas</a></li>
+                        <li><a href="#attorneys" class="hover:text-amber-400 transition-colors">Our Attorneys</a></li>
+                        <li><a href="#results" class="hover:text-amber-400 transition-colors">Case Verdicts</a></li>
+                        <li><a href="#booking" class="hover:text-amber-400 transition-colors">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Practice Areas -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 tracking-wider uppercase">Practices</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Corporate & Commercial</a></li>
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Criminal Defense</a></li>
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Intellectual Property</a></li>
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Family & Estate</a></li>
+                        <li><a href="#practice-areas" class="hover:text-amber-400 transition-colors">Litigation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Office -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-sm mb-4 tracking-wider uppercase">Main Office</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                            <span>550 Fifth Avenue, Suite 1800<br>New York, NY 10036</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                            <span>+1 (800) 555-LEXV</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-amber-500 shrink-0"></i>
+                            <span>contact@lexvance.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disclaimer & Copyright -->
+            <div class="pt-8 border-t border-slate-800 text-[11px] text-slate-500 space-y-4">
+                <p>
+                    <strong>ATTORNEY ADVERTISING:</strong> Prior results do not guarantee a similar outcome. The legal information presented on this site is for general information purposes only and should not be construed as formal legal advice or the formation of a lawyer-client relationship.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+                    <p>© <span id="currentYear"></span>  Cayañga Zuñiga Camacho and Boncodin Law Offices. All rights reserved.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:underline">Privacy Policy</a>
+                        <a href="#" class="hover:underline">Terms of Service</a>
+                        <a href="#" class="hover:underline">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Detail Modal -->
+    <div id="detailModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-navy-900 border border-amber-500/30 rounded-xl max-w-lg w-full p-6 text-white relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Content inserted via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Store
+        const practiceAreas = [
+            {
+                id: 'corp',
+                category: 'corporate',
+                title: 'Corporate & Commercial Law',
+                icon: 'building-2',
+                shortDesc: 'Mergers, acquisitions, corporate governance, and complex regulatory compliance.',
+                fullDesc: 'Our Corporate & Commercial practice provides end-to-end strategic legal counsel for Fortune 500 corporations, venture-backed startups, and financial institutions. We excel in cross-border M&A, capital markets, antitrust compliance, and corporate structuring.'
+            },
+            {
+                id: 'family',
+                category: 'family',
+                title: 'Family & Matrimonial Law',
+                icon: 'users',
+                shortDesc: 'High-net-worth divorce, asset division, child custody, and prenuptial agreements.',
+                fullDesc: 'Handling family matters requires a blend of fierce legal defense and extreme discretion. We specialize in complex high-net-worth marital dissolution, international child custody, premarital planning, and trust/estate protections.'
+            },
+            {
+                id: 'crim',
+                category: 'criminal',
+                title: 'Criminal Defense & Investigations',
+                icon: 'shield-alert',
+                shortDesc: 'White-collar defense, federal investigations, and felony representation.',
+                fullDesc: 'Our criminal defense group comprises former federal prosecutors and veteran litigators. We defend executives and individuals facing high-stakes investigations by the DOJ, SEC, FINRA, and state regulatory authorities.'
+            },
+            {
+                id: 'ip',
+                category: 'ip',
+                title: 'Intellectual Property',
+                icon: 'lightbulb',
+                shortDesc: 'Patent litigation, trademark defense, trade secret protection, and copyrighting.',
+                fullDesc: 'Safeguarding innovations in tech, pharmaceuticals, and creative industries. We represent clients in IP portfolio management, patent infringement litigation before federal courts, and global trademark enforcement.'
+            },
+            {
+                id: 're',
+                category: 'corporate',
+                title: 'Real Estate & Land Use',
+                icon: 'landmark',
+                shortDesc: 'Commercial real estate acquisitions, zoning disputes, leasing, and financing.',
+                fullDesc: 'Comprehensive real estate transactions, representing developers, institutional investors, and lenders across commercial development, zoning approvals, tax litigation, and complex property disputes.'
+            },
+            {
+                id: 'injury',
+                category: 'family',
+                title: 'Personal Injury & Liability',
+                icon: 'heart-pulse',
+                shortDesc: 'Catastrophic injury, medical malpractice, and complex liability representation.',
+                fullDesc: 'Dedicated to securing full compensation for victims of severe personal injury, catastrophic accidents, and medical negligence. We have recovered hundreds of millions for injured individuals and their families.'
+            }
+        ];
+
+        const attorneys = [
+            {
+                name: 'Arthur Vance',
+                role: 'Senior Managing Partner',
+                spec: 'Corporate Law & M&A',
+                image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80',
+                bio: '30+ years of legal mastery in major corporate acquisitions and federal litigation.'
+            },
+            {
+                name: 'Sarah Lex',
+                role: 'Founding Partner',
+                spec: 'Family & Matrimonial Law',
+                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80',
+                bio: 'Renowned expert in complex estate disputes and high-net-worth family governance.'
+            },
+            {
+                name: 'Marcus Vance-Holloway',
+                role: 'Partner',
+                spec: 'Criminal Defense & IP',
+                image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80',
+                bio: 'Former federal prosecutor with a 98% verdict success rate in complex trials.'
+            },
+            {
+                name: 'Elena Rostova',
+                role: 'Senior Associate',
+                spec: 'Intellectual Property',
+                image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80',
+                bio: 'Specialist in tech patent portfolios, AI regulation, and global trade secret protection.'
+            }
+        ];
+
+        // Render Practice Cards
+        function renderPracticeGrid(filter = 'all') {
+            const container = document.getElementById('practiceGrid');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all' 
+                ? practiceAreas 
+                : practiceAreas.filter(p => p.category === filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-md hover:border-amber-500/50 transition-all hover:-translate-y-1 group flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+                            <i data-lucide="${item.icon}" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl dark:text-white text-navy-950 mb-2">${item.title}</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">${item.shortDesc}</p>
+                    </div>
+                    <button onclick="openModal('${item.title}', '${item.fullDesc.replace(/'/g, "\\'")}')" class="mt-6 flex items-center text-xs font-bold text-amber-500 hover:text-amber-400 uppercase tracking-wider">
+                        <span>Learn More</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // Filter Practice Areas
+        function filterPractice(category) {
+            renderPracticeGrid(category);
+            const btns = document.querySelectorAll('#practiceFilterBtns button');
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors bg-amber-500 text-navy-950 font-semibold';
+                } else {
+                    btn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors dark:bg-navy-800 bg-white text-slate-700 dark:text-slate-300 hover:text-amber-500';
+                }
+            });
+        }
+
+        // Render Attorneys
+        function renderAttorneys() {
+            const container = document.getElementById('attorneysGrid');
+            container.innerHTML = '';
+
+            attorneys.forEach(att => {
+                const card = document.createElement('div');
+                card.className = 'bg-slate-50 dark:bg-navy-950 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md group';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-72">
+                        <img src="${att.image}" alt="${att.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs text-amber-400 font-semibold tracking-wider uppercase block">${att.spec}</span>
+                            <h3 class="font-serif font-bold text-xl text-white">${att.name}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs text-slate-400 mb-4">${att.bio}</p>
+                        <button onclick="openModal('${att.name} - ${att.role}', '${att.bio}')" class="w-full border border-amber-500/30 text-amber-500 hover:bg-amber-500 hover:text-navy-950 text-xs font-bold py-2 rounded transition-colors uppercase tracking-wider">
+                            View Full Profile
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Modal Functionality
+        function openModal(title, text) {
+            const modal = document.getElementById('detailModal');
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <h3 class="font-serif text-2xl font-bold text-amber-400 mb-3">${title}</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">${text}</p>
+                <a href="#booking" onclick="closeModal()" class="inline-block gold-gradient text-navy-950 font-bold px-5 py-2.5 rounded text-xs uppercase tracking-wider">
+                    Book Consultation With Team
+                </a>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        // Handle Quick Form Submission
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            openModal("Request Received", "Thank you for reaching out to  Cayañga Zuñiga Camacho and Boncodin Law Offices. A senior legal associate will review your evaluation request and contact you within 2 business hours.");
+            e.target.reset();
+        }
+
+        // Handle Booking Submission
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            openModal("Consultation Confirmed", "Your private consultation has been scheduled successfully. An invitation and preparation checklist have been sent to your email address.");
+            e.target.reset();
+        }
+
+        // Theme Toggle Functionality
+        const themeToggleBtns = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
+        
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggleBtns.forEach(btn => {
+            if(btn) btn.addEventListener('click', toggleTheme);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Set Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initial Initialization
+        window.onload = function() {
+            // Check theme preference
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            renderPracticeGrid();
+            renderAttorneys();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
